@@ -1,0 +1,1194 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            color: #202124;
+            line-height: 1.5;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* Ocultar scrollbar pero mantener funcionalidad */
+        body::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+
+        /* Para Firefox */
+        body {
+            scrollbar-width: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+        }
+
+        .google-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 32px;
+            justify-content: flex-start;
+        }
+
+        .google-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .google-icon::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        .google-text {
+            font-size: 14px;
+            color: #5f6368;
+            font-weight: 400;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 400;
+            color: #202124;
+            margin-bottom: 6px;
+            letter-spacing: -0.25px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #202124;
+            margin-bottom: 28px;
+        }
+
+        .subtitle a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .subtitle a:hover {
+            text-decoration: underline;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            position: relative;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            background-color: #fff;
+            transition: all 0.2s ease;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-container:hover {
+            border-color: #1a73e8;
+        }
+
+        .input-container.focused {
+            border-color: #1a73e8;
+            border-width: 2px;
+            box-shadow: 0 0 0 1px #1a73e8;
+        }
+
+        .input-label {
+            position: absolute;
+            top: 18px;
+            left: 14px;
+            color: #5f6368;
+            font-size: 16px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            background-color: white;
+            padding: 0 4px;
+            z-index: 1;
+        }
+
+        .input-label.active {
+            top: -8px;
+            font-size: 12px;
+            color: #1a73e8;
+            font-weight: 400;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 14px 14px 14px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #202124;
+            background: transparent;
+            flex: 1;
+        }
+
+        .form-input.with-toggle {
+            padding-right: 48px;
+        }
+
+        .forgot-email {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 14px;
+            display: inline-block;
+        }
+
+        .forgot-email:hover {
+            text-decoration: underline;
+        }
+
+        .privacy-notice {
+            font-size: 13px;
+            color: #5f6368;
+            margin: 28px 0 24px 0;
+            line-height: 1.4;
+        }
+
+        .privacy-notice a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .privacy-notice a:hover {
+            text-decoration: underline;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            gap: 16px;
+        }
+
+        .create-account {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .create-account:hover {
+            text-decoration: underline;
+        }
+
+        .next-button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .next-button:hover {
+            background-color: #1557b0;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+        }
+
+        .next-button:active {
+            background-color: #0d47a1;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            color: #5f6368;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .language-selector i {
+            margin-left: 6px;
+            font-size: 10px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: #5f6368;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Popup optimizations */
+        @media (max-width: 480px) {
+            .container {
+                padding: 16px;
+                min-height: auto;
+                max-width: 100%;
+            }
+
+            .title {
+                font-size: 22px;
+            }
+
+            .google-text {
+                font-size: 13px;
+            }
+
+            .form-input {
+                padding: 16px 12px 12px 12px;
+            }
+
+            .input-label {
+                left: 12px;
+                top: 16px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+
+            .next-button {
+                width: 100%;
+                padding: 12px;
+            }
+
+            .create-account {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 12px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+
+            .google-logo {
+                margin-bottom: 24px;
+            }
+
+            .privacy-notice {
+                font-size: 12px;
+            }
+        }
+
+        .email-display {
+            margin-bottom: 8px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-radius: 8px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .user-avatar i {
+            font-size: 32px;
+            color: #5f6368;
+        }
+
+        .user-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .user-email {
+            font-size: 16px;
+            color: #202124;
+            font-weight: 400;
+            margin-bottom: 2px;
+            word-break: break-all;
+        }
+
+        .change-account {
+            font-size: 14px;
+        }
+
+        .change-account a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .change-account a:hover {
+            text-decoration: underline;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #5f6368;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .toggle-password:hover {
+            background-color: rgba(95, 99, 104, 0.1);
+            color: #202124;
+        }
+
+        .toggle-password:active {
+            background-color: rgba(95, 99, 104, 0.2);
+        }
+
+        .toggle-password i {
+            font-size: 14px;
+        }
+
+        /* Animaciones para transición */
+        .slide-out-left {
+            animation: slideOutLeft 0.3s ease-in-out;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.3s ease-in-out;
+        }
+
+        @keyframes slideOutLeft {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .popup-container {
+            width: 100%;
+            max-width: 400px;
+            min-height: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        /* Ajustes para contenedores pequeños */
+        @media (max-height: 600px) {
+            .container {
+                min-height: auto;
+                padding: 16px;
+            }
+
+            .google-logo {
+                margin-bottom: 24px;
+            }
+
+            .privacy-notice {
+                margin: 20px 0 16px 0;
+            }
+
+            .footer {
+                padding-top: 16px;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            color: #202124;
+            line-height: 1.5;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* Ocultar scrollbar pero mantener funcionalidad */
+        body::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+
+        /* Para Firefox */
+        body {
+            scrollbar-width: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* Ocultar scrollbar del contenedor */
+        .container::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+
+        /* Para Firefox */
+        .container {
+            scrollbar-width: none;
+        }
+
+        .google-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            justify-content: flex-start;
+        }
+
+        .google-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .google-icon::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .google-text {
+            font-size: 16px;
+            color: #5f6368;
+            font-weight: 400;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 400;
+            color: #202124;
+            margin-bottom: 8px;
+            letter-spacing: -0.25px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #202124;
+            margin-bottom: 32px;
+        }
+
+        .subtitle a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .subtitle a:hover {
+            text-decoration: underline;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .input-container {
+            position: relative;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            background-color: #fff;
+            transition: all 0.2s ease;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-container:hover {
+            border-color: #1a73e8;
+        }
+
+        .input-container.focused {
+            border-color: #1a73e8;
+            border-width: 2px;
+            box-shadow: 0 0 0 1px #1a73e8;
+        }
+
+        .input-label {
+            position: absolute;
+            top: 18px;
+            left: 14px;
+            color: #5f6368;
+            font-size: 16px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            background-color: white;
+            padding: 0 4px;
+            z-index: 1;
+        }
+
+        .input-label.active {
+            top: -8px;
+            font-size: 12px;
+            color: #1a73e8;
+            font-weight: 400;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 14px 14px 14px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #202124;
+            background: transparent;
+            flex: 1;
+        }
+
+        .form-input.with-toggle {
+            padding-right: 48px;
+        }
+
+        .forgot-email {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 14px;
+            display: inline-block;
+        }
+
+        .forgot-email:hover {
+            text-decoration: underline;
+        }
+
+        .privacy-notice {
+            font-size: 13px;
+            color: #5f6368;
+            margin: 28px 0 24px 0;
+            line-height: 1.4;
+        }
+
+        .privacy-notice a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .privacy-notice a:hover {
+            text-decoration: underline;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            gap: 16px;
+        }
+
+        .create-account {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .create-account:hover {
+            text-decoration: underline;
+        }
+
+        .next-button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .next-button:hover {
+            background-color: #1557b0;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+        }
+
+        .next-button:active {
+            background-color: #0d47a1;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            color: #5f6368;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .language-selector i {
+            margin-left: 6px;
+            font-size: 10px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: #5f6368;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Popup optimizations */
+        @media (max-width: 480px) {
+            .container {
+                padding: 16px;
+                min-height: auto;
+                max-width: 100%;
+            }
+
+            .title {
+                font-size: 22px;
+            }
+
+            .google-text {
+                font-size: 13px;
+            }
+
+            .form-input {
+                padding: 16px 12px 12px 12px;
+            }
+
+            .input-label {
+                left: 12px;
+                top: 16px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+
+            .next-button {
+                width: 100%;
+                padding: 12px;
+            }
+
+            .create-account {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 12px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+
+            .google-logo {
+                margin-bottom: 24px;
+            }
+
+            .privacy-notice {
+                font-size: 12px;
+            }
+        }
+
+        .email-display {
+            margin-bottom: 8px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-radius: 8px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .user-avatar i {
+            font-size: 32px;
+            color: #5f6368;
+        }
+
+        .user-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .user-email {
+            font-size: 16px;
+            color: #202124;
+            font-weight: 400;
+            margin-bottom: 2px;
+            word-break: break-all;
+        }
+
+        .change-account {
+            font-size: 14px;
+        }
+
+        .change-account a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .change-account a:hover {
+            text-decoration: underline;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #5f6368;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .toggle-password:hover {
+            background-color: rgba(95, 99, 104, 0.1);
+            color: #202124;
+        }
+
+        .toggle-password:active {
+            background-color: rgba(95, 99, 104, 0.2);
+        }
+
+        .toggle-password i {
+            font-size: 14px;
+        }
+
+        /* Estilos para verificación en dos pasos */
+        .two-factor-content {
+            margin-top: 32px;
+        }
+
+        .two-factor-title {
+            font-size: 24px;
+            font-weight: 400;
+            color: #202124;
+            margin-bottom: 20px;
+            letter-spacing: -0.25px;
+        }
+
+        .two-factor-message {
+            font-size: 16px;
+            color: #5f6368;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        .two-factor-message strong {
+            font-weight: 500;
+            color: #202124;
+        }
+
+        .phone-illustration {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .phone-container {
+            width: 280px;
+            height: 520px;
+            background: linear-gradient(145deg, #f8f9fa, #e8eaed);
+            border-radius: 35px;
+            padding: 25px 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .phone-container::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 5px;
+            background: #9aa0a6;
+            border-radius: 3px;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 30px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .notification {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 24px;
+            width: 100%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .notification-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .gmail-icon {
+            width: 32px;
+            height: 32px;
+            background: #ea4335;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+
+        .gmail-icon i {
+            color: white;
+            font-size: 16px;
+        }
+
+        .notification-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #202124;
+        }
+
+        .notification-content {
+            margin-top: 12px;
+        }
+
+        .notification-text {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .notification-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .notification-btn {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .no-btn {
+            background: #f8f9fa;
+            color: #5f6368;
+            border: 1px solid #dadce0;
+        }
+
+        .no-btn:hover {
+            background: #e8eaed;
+        }
+
+        .yes-btn {
+            background: #1a73e8;
+            color: white;
+        }
+
+        .yes-btn:hover {
+            background: #1557b0;
+        }
+
+        .verification-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0 32px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .loading-spinner {
+            margin-right: 16px;
+            color: #1a73e8;
+        }
+
+        .status-text {
+            font-size: 16px;
+            color: #5f6368;
+        }
+
+        .alternative-methods {
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .alt-method-link {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .alt-method-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Estados de verificación */
+        .verification-success .loading-spinner {
+            color: #137333;
+        }
+
+        .verification-success .loading-spinner i {
+            animation: none;
+        }
+
+        .verification-success .loading-spinner i::before {
+            content: '\f00c';
+        }
+
+        .verification-success .status-text {
+            color: #137333;
+        }
+        .slide-out-left {
+            animation: slideOutLeft 0.3s ease-in-out;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.3s ease-in-out;
+        }
+
+        @keyframes slideOutLeft {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .popup-container {
+            width: 100%;
+            min-height: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        /* Ajustes para contenedores pequeños */
+        @media (max-height: 600px) {
+            .container {
+                height: auto;
+                min-height: 100vh;
+                padding: 16px;
+            }
+
+            .google-logo {
+                margin-bottom: 20px;
+            }
+
+            .privacy-notice {
+                margin: 16px 0 12px 0;
+            }
+
+            .footer {
+                padding-top: 12px;
+            }
+        }
+
+        @media (max-height: 500px) {
+            .container {
+                padding: 12px;
+            }
+
+            .google-logo {
+                margin-bottom: 16px;
+            }
+
+            .title {
+                font-size: 20px;
+                margin-bottom: 4px;
+            }
+
+            .subtitle {
+                margin-bottom: 20px;
+            }
+
+            .privacy-notice {
+                margin: 12px 0 8px 0;
+                font-size: 12px;
+            }
+
+            .footer {
+                padding-top: 8px;
+            }
+
+            .footer-nav a {
+                font-size: 11px;
+            }
+        }
